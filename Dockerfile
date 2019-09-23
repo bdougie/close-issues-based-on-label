@@ -1,8 +1,8 @@
 FROM andrius/alpine-ruby
 
 # Labels for GitHub to read your action
-LABEL "com.github.actions.name"="Close issues based on label"
-LABEL "com.github.actions.description"="This is a GitHub Action that close issues based on the provided label"
+LABEL "com.github.actions.name"="Close issues with label"
+LABEL "com.github.actions.description"="This is an Action that closes issues based on the provided label"
 # Here are all of the available icons: https://feathericons.com/
 LABEL "com.github.actions.icon"="play"
 # And all of the available colors: https://developer.github.com/actions/creating-github-actions/creating-a-docker-container/#label
