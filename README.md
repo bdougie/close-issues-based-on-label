@@ -8,7 +8,7 @@ To test this GitHub Action, replaces the `LABEL` ENV with one you want to close.
 ```yml
 on:
   schedule:
-  - cron: 45 * * * 1
+  - cron: 0 5 * * 3
 name: Weekly Issue Closure
 jobs:
   cycle-weekly-close:
