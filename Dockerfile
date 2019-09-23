@@ -26,4 +26,4 @@ Run bundle install
 
 COPY . .
 
-CMD ["ruby", "./run.rb"]
+CMD ["ruby", "./action.rb"]
