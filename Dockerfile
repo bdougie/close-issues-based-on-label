@@ -26,4 +26,4 @@ Run bundle install
 
 COPY . .
 
-CMD ["ruby", "./action.rb"]
+ENTRYPOINT ["/entrypoint.sh"]
