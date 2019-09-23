@@ -24,6 +24,4 @@ COPY Gemfile /Gemfile
 RUN chmod +x /entrypoint.sh
 Run bundle install
 
-COPY . .
-
 ENTRYPOINT ["/entrypoint.sh"]
