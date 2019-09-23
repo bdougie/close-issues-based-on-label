@@ -19,7 +19,6 @@ RUN apk update && \
 
 COPY entrypoint.sh /entrypoint.sh
 COPY action.rb /action.rb
-COPY Gemfile /Gemfile
 
 RUN chmod +x /entrypoint.sh
 
