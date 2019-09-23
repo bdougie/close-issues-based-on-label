@@ -1,3 +1,4 @@
+FROM andrius/alpine-ruby
 
 # Labels for GitHub to read your action
 LABEL "com.github.actions.name"="Close issues based on label"
@@ -7,14 +8,21 @@ LABEL "com.github.actions.icon"="play"
 # And all of the available colors: https://developer.github.com/actions/creating-github-actions/creating-a-docker-container/#label
 LABEL "com.github.actions.color"="gray-dark"
 
-FROM ruby:2.5
+ENV RUBY_PACKAGES bash curl-dev ruby-dev build-base git ruby ruby-io-console ruby-bundler ruby-json ruby-rdoc
 
-RUN bundle config --global frozen 1
+# Update and install all of the required packages.
+# At the end, remove the apk cache
+RUN apk update && \
+    apk upgrade && \
+    apk add $RUBY_PACKAGES && \
+    rm -rf /var/cache/apk/*
 
-WORKDIR /usr/src/app
+COPY entrypoint.sh /entrypoint.sh
+COPY action.rb /action.rb
+COPY Gemfile /Gemfile
 
-COPY Gemfile Gemfile.lock ./
-RUN bundle install
+RUN chmod +x /entrypoint.sh
+Run bundle install
 
 COPY . .
 
