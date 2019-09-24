@@ -18,6 +18,6 @@ jobs:
     - name: weekly-issue-closure
       uses: bdougie/close-issues-based-on-label@master
       env:
-        LABEL: bug
+        LABEL: wontfix
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
