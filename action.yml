@@ -1,0 +1,9 @@
+name: 'Close issues with label'
+description: 'This is an Action that closes issues based on the provided label'
+author: 'Brian Douglas'
+branding:
+  icon: 'archive'
+  color: 'gray-dark'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
