@@ -10,5 +10,5 @@ open_issues = client.list_issues(repo, { :labels =>  label})
 
 open_issues.each do |issue|
   client.close_issue(repo, issue.number)
-  client.remove_label({repo, issue.number, label})
+  client.remove_label(repo, issue.number, label)
 end
